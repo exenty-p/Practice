@@ -1,0 +1,81 @@
+#include <iostream>
+#include <sstream>
+#include <string>
+#include <windows.h>
+
+using namespace std;
+
+/*
+void encrypt(const int* ids, int* encrypted, int size, int shift) {
+    for (int i = 0; i < size; i++) {
+        encrypted[i] = ids[i] << shift;
+    }
+}
+
+void decript(const int* encryptedId, int* decrypted, int size, int shift) {
+    for (int i = 0; i < size; i++) {
+        decrypted[i] = encryptedId[i] >> shift;
+    }
+}
+
+void print(const int* arr, int size, const char* name) {
+    std::cout << "Name: ";
+    for (int i = 0; i < size; i++) {
+        std::cout << std::setw(10) << arr[i] << "\n";
+    }
+}
+
+int main() {
+    setlocale(LC_ALL, "Russian");
+    const int size = 10;
+    int userId[size] = { 3, 10, 34, 35, 51, 55, 59, 62, 100, 200 };
+    int encryptedId[size];
+    int decryptedId[size];
+
+    const int shift = 4;
+
+    print(userId, size, "Исходные ID");
+
+    encrypt(userId, encryptedId, size, shift);
+    print(encryptedId, size, "Зашифрованные ID");
+
+    decript(encryptedId, decryptedId, size, shift);
+    print(decryptedId, size, "Расшифрованные ID");
+
+
+
+
+    return 0;
+}
+*/
+
+int main() {
+    SetConsoleOutputCP(CP_UTF8);
+    SetConsoleCP(CP_UTF8);
+
+    string text = "Проверка, один, два, три.";
+    int M = 0;
+    int N = 0;
+    cout << "Введите начало удаления: " << endl;
+    cin >> M;
+    cout << "Введите конец удаления: " << endl;
+    cin >> N;
+
+    stringstream ss(text);
+    string word;
+    string result = "";
+    int index = 1;
+
+    while (ss >> word) {
+        if (index < M || index > N) {
+            if (!result.empty()) {
+                result += "";
+            }
+            result += word;
+        }
+        index++;
+    }
+    
+    cout << "Result: " << result;
+    return 0;
+}
