@@ -8,3 +8,4 @@
 
 Задание 2
 Дана строка. Удалить слова со M по N.
+<img width="408" height="113" alt="изображение" src="https://github.com/user-attachments/assets/f05801c7-a88e-4f72-9420-8cbec1b93c93" />
