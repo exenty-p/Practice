@@ -2,6 +2,7 @@
 #include <sstream>
 #include <string>
 #include <windows.h>
+#include <iomanip>
 
 using namespace std;
 
@@ -19,9 +20,9 @@ void decript(const int* encryptedId, int* decrypted, int size, int shift) {
 }
 
 void print(const int* arr, int size, const char* name) {
-    std::cout << "Name: ";
+    std::cout << "Name: " << endl;
     for (int i = 0; i < size; i++) {
-        std::cout << std::setw(10) << arr[i] << "\n";
+        std::cout << setw(10) << arr[i] << "\n";
     }
 }
 
@@ -49,6 +50,7 @@ int main() {
 }
 */
 
+
 int main() {
     SetConsoleOutputCP(CP_UTF8);
     SetConsoleCP(CP_UTF8);
@@ -56,9 +58,9 @@ int main() {
     string text = "Проверка, один, два, три.";
     int M = 0;
     int N = 0;
-    cout << "Введите начало удаления: " << endl;
+    cout << "Введите начало удаления: ";
     cin >> M;
-    cout << "Введите конец удаления: " << endl;
+    cout << endl << "Введите конец удаления: ";
     cin >> N;
 
     stringstream ss(text);
@@ -76,6 +78,6 @@ int main() {
         index++;
     }
     
-    cout << "Result: " << result;
+    cout << endl << "Result: " << result;
     return 0;
 }
